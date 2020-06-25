@@ -26,10 +26,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "exec < /dev/tty && git cz --hook || true"
-    }
   }
 }
