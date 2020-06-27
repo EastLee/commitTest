@@ -1,15 +1,15 @@
 language: node_js
-node_js:
-  - node
-  - 10
-install: npm install
-env:
-  - TYPE=first
-  - TYPE=second
 job:
   include:
     - node_js: "node"
+      env: TYPE=first
+    - node_js: "node"
       env: TYPE=second
+    - node_js: "10"
+      env: TYPE=first
+    - node_js: "10"
+      env: TYPE=second
+install: npm install
 script:
   - npm run test:$TYPE
   - npm run build:$TYPE
