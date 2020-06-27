@@ -1,9 +1,10 @@
 language: node_js
+env:
+  - TYPE=first
 node_js:
   - node
-  - 10
 install:
   - npm install
 script:
-  - npm run test
-  - npm run build
+  - npm run test:$TYPE
+  - npm run build:$TYPE
