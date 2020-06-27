@@ -3,12 +3,9 @@ node_js:
   - node
 install:
   - npm install
-job:
-  include:
-    - name: "first time"
-      env: TYPE=first
-    - name: "second time"
-      env: TYPE=second
+env:
+  - TYPE=first
+  - TYPE=second
 script:
   - npm run test:$TYPE
   - npm run build:$TYPE
