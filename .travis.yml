@@ -1,10 +1,14 @@
 language: node_js
-env:
-  - TYPE=first
 node_js:
   - node
 install:
   - npm install
+job:
+  include:
+    - name: "first time"
+      env: TYPE=first
+    - name: "second time"
+      env: TYPE=second
 script:
   - npm run test:$TYPE
   - npm run build:$TYPE
