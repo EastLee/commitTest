@@ -1,16 +1,12 @@
 language: node_js
-node_js:
-  - node
-  - 10
-env:
-  - TYPE=first
-  - TYPE=second
-job:
-  exclude:
-    - node_js: "node"
-      env: TYPE=second
+node_js: node
 install: npm install
-script:
-  - npm run test:$TYPE
-  - npm run build:$TYPE
-  - sh ./build.sh $TYPE
+script: sh ./build.sh
+deploy:
+  provider: npm
+  email: andalidong@163.com
+  api_key:
+    secure: MQrTnKGE+urQTa/9+F8QoUlyWj2Y6tJHmh2KoUORg/qfCZg4K286K40W261ce17Q6ar6Hjy2V1JoTVvyTZad301h3kAShYypSnbVz/ZKR/Ii/hdA+uoy3CM6N5QgZNNjl7PgUKdkLfVu8j5VqYnbfUysLkC9dhl53awbHUsk2yq1ZnkvNyubHgAKtQ4x3QZ44F1cA8Xj8IiO2HVR2ngUhskZrwLYQuoqTGpwxwj8xzoAUyd0UgYLnurlovvwmo1xFjRprAGimPPzXgBASuI4Dl9ocy4Rn2l5ZMmZcpnIUJtvLqoR8herh3SWS9XqaOpEQulwbUb93PGam+5otgDNAg8aiQnRKAmg/JTSY4sqLVHaVORFO4wvQEzZUUXTMimx2hiuOlfgF15JT7ojXxt6J3q9PykAS+biEzxUcMRcyMWVAyg58G+J4gjPavb7CaOCCr+d0RSqu81BhSQIMv8XRyRuE3JDuWz9Yd+hjaE9xHs7DY0Q2+3dls5Q/PscOT1OW7jXN+YIJVMK0AOTfyIzfoEXM6q9hLVPTlA0Fhu3ZkzpaiDVvVtYOups/Wyy3I6IuPIAkK7xa7GxUExKzh3wlhrtpwK9L/dCJhLr0fWNj1I12D5KawhfFkXEnzdOw0w7FVApUJ6VSqnogQ6XV6kr3QvghuQ86Ll7I2KkwPrjjO4=
+  on:
+    repo: EastLee/commitTest
+  skip_cleanup: 'true'

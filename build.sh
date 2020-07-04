@@ -1,1 +1,1 @@
-echo "build $1";
+echo "build deploy";
